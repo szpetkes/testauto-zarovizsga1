@@ -2,7 +2,7 @@
 ## Junior Automata Tesztelő szak
 ### Félideji vizsga
 
-Üdvözöllek a félideji gyakorlati vizsgán.
+Üdvözöllek a záróvizsgán.
 
 ### A vizsgáról
 * 5 részfeladatból áll, az egyes feladat leírásokat a `testproject` mappában találod
