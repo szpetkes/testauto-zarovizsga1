@@ -18,14 +18,11 @@ meg, csak találd meg az egy véletlen hiányzó város nevét
 Az ellenőrzésekhez NEM kell teszt keretrendszert használnod (mint pl a pytest) viszont fontos, hogy assert 
 összehasonlításokat használj! "" """
 
+import time
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
-import pytest
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
