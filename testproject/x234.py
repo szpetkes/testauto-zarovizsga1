@@ -56,13 +56,13 @@ try:
 
 
 # TC01
-    calculation('10', '5')
+    calculation('99', '12')
     perimeter = driver.find_element_by_id('result')
 
     assert perimeter.text == '30'
 
 # TC02
-    calculation('number', 'also')
+    calculation('kiskutya', '12')
     perimeter = driver.find_element_by_id('result')
 
     assert perimeter.text == 'NaN'
