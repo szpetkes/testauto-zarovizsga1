@@ -35,23 +35,42 @@ time.sleep(1)
 
 try:
     # elements
-    cities = driver.find_elements_by_id('cites')
-    random_cities = driver.find_elements_by_id('randomCities')
-    lost_city = driver.find_element_by_id('missingCity')
+    cities = driver.find_element_by_id('cites')
+    missing = driver.find_element_by_id('missingCity')
     checking = driver.find_element_by_id('submit')
     result_message = driver.find_element_by_id('result')
 
+    #cities in the world
+    cities_in_the_world = []
+    world_cities = driver.find_elements_by_id('cites')
+    for city in world_cities:
+        cities_in_the_world.append(city.text)
+    print(cities_in_the_world)
 
-    # datainput
+    #random cities list
+    random_cities = []
+    random_city = driver.find_elements_by_xpath('//ul/li')
+    for city in random_city:
+        random_cities.append(city.text)
+    print(random_cities)
 
-    def data_input(city):
-        lost_city.clear()
-        lost_city.send_keys(city)
+    #compare two list
+    def compare(cities_in_the_world, random_cities):
+        for i in range(len(cities_in_the_world)):
+            if cities_in_the_world[i] not in random_cities:
+                print("missing", cities_in_the_world[i])
+        for j in range(len(random_cities)):
+            if random_cities[j] not in cities_in_the_world:
+                print("added", random_cities[j])
+
+    #send missing city to validate
+    def data_input(missing_city):
+        missing.clear()
+        missing.send_keys(city)
         checking.click()
         time.sleep(1)
 
-
-# TC01:
+    assert result_message == missing.text
 
 finally:
     driver.close()
